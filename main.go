@@ -43,8 +43,17 @@ func savePNG(filename string, img image.Image) error {
 func main() {
 	img, err := open("test.jpg")
 	if err != nil {
-		panic(err)
+		log.Fatalln(err)
 	}
+
+	md, err := os.Create("output/README.md")
+	if err != nil {
+		log.Fatalln(err)
+	}
+	defer md.Close()
+
+	fmt.Fprintln(md, `# Image Quality Preview`)
+	fmt.Fprintln(md)
 
 	w, h := img.Bounds().Dx()/7, img.Bounds().Dy()/7
 	for idx, f := range resizer.Resizer {
@@ -60,5 +69,8 @@ func main() {
 			log.Println(f.Name(), err)
 			continue
 		}
+
+		fmt.Fprintf(md, "### %s\n\n", f.Name())
+		fmt.Fprintf(md, "![%s output image](%02d-%s.png)\n\n", f.Name(), idx, f.Name())
 	}
 }
