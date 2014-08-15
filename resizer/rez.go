@@ -1,13 +1,27 @@
 package resizer
 
 import (
+	"fmt"
 	"image"
 
 	"github.com/bamiaux/rez"
 )
 
 func rezConvert(src image.Image, w int, h int, method rez.Filter) (image.Image, error) {
-	m := image.NewRGBA(image.Rect(0, 0, w, h))
+	r := image.Rect(0, 0, w, h)
+	var m image.Image
+	switch t := src.(type) {
+	case *image.YCbCr:
+		m = image.NewYCbCr(r, t.SubsampleRatio)
+	case *image.RGBA:
+		m = image.NewRGBA(r)
+	case *image.NRGBA:
+		m = image.NewNRGBA(r)
+	case *image.Gray:
+		m = image.NewGray(r)
+	default:
+		return nil, fmt.Errorf("unsupported image format")
+	}
 	err := rez.Convert(m, src, method)
 	return m, err
 }
