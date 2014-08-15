@@ -128,3 +128,11 @@
 
 ![ImagingResizeCosine output image](31-ImagingResizeCosine.png)
 
+### ImageMagickResize
+
+![ImageMagickResize output image](32-ImageMagickResize.png)
+
+### ImageMagickResizeWithDefine
+
+![ImageMagickResizeWithDefine output image](33-ImageMagickResizeWithDefine.png)
+
