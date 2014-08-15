@@ -13,7 +13,7 @@ import (
 )
 
 func open(filename string) (image.Image, error) {
-	f, err := os.Open("test.jpg")
+	f, err := os.Open(filename)
 	if err != nil {
 		return nil, err
 	}
