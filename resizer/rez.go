@@ -7,7 +7,6 @@ import (
 )
 
 func rezConvert(src image.Image, w int, h int, method rez.Filter) (image.Image, error) {
-	src.ColorModel()
 	m := image.NewRGBA(image.Rect(0, 0, w, h))
 	err := rez.Convert(m, src, method)
 	return m, err
