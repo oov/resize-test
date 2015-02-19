@@ -172,6 +172,22 @@ func BenchmarkScalerImagingResizeCosine(b *testing.B) {
 	resizeFuncBench(b, resizer.ImagingResizeCosine)
 }
 
+func BenchmarkScalerDrawResizeNearestNeighbor(b *testing.B) {
+	resizeFuncBench(b, resizer.DrawResizeNearestNeighbor)
+}
+
+func BenchmarkScalerDrawResizeApproxBiLinear(b *testing.B) {
+	resizeFuncBench(b, resizer.DrawResizeApproxBiLinear)
+}
+
+func BenchmarkScalerDrawResizeBiLinear(b *testing.B) {
+	resizeFuncBench(b, resizer.DrawResizeBiLinear)
+}
+
+func BenchmarkScalerDrawResizeCatmullRom(b *testing.B) {
+	resizeFuncBench(b, resizer.DrawResizeCatmullRom)
+}
+
 func BenchmarkFlowNfntResizeNearestNeighbor(b *testing.B) {
 	streamResizeFuncBench(b, resizer.StreamResizer(resizer.ResizeFunc(resizer.NfntResizeNearestNeighbor)))
 }
@@ -298,6 +314,22 @@ func BenchmarkFlowImagingResizeWelch(b *testing.B) {
 
 func BenchmarkFlowImagingResizeCosine(b *testing.B) {
 	streamResizeFuncBench(b, resizer.StreamResizer(resizer.ResizeFunc(resizer.ImagingResizeCosine)))
+}
+
+func BenchmarkFlowDrawResizeNearestNeighbor(b *testing.B) {
+	streamResizeFuncBench(b, resizer.StreamResizer(resizer.ResizeFunc(resizer.DrawResizeNearestNeighbor)))
+}
+
+func BenchmarkFlowDrawResizeApproxBiLinear(b *testing.B) {
+	streamResizeFuncBench(b, resizer.StreamResizer(resizer.ResizeFunc(resizer.DrawResizeApproxBiLinear)))
+}
+
+func BenchmarkFlowDrawResizeBiLinear(b *testing.B) {
+	streamResizeFuncBench(b, resizer.StreamResizer(resizer.ResizeFunc(resizer.DrawResizeBiLinear)))
+}
+
+func BenchmarkFlowDrawResizeCatmullRom(b *testing.B) {
+	streamResizeFuncBench(b, resizer.StreamResizer(resizer.ResizeFunc(resizer.DrawResizeCatmullRom)))
 }
 
 func BenchmarkFlowImageMagickResize(b *testing.B) {

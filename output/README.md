@@ -128,11 +128,27 @@
 
 ![ImagingResizeCosine output image](31-ImagingResizeCosine.png)
 
+### DrawResizeNearestNeighbor
+
+![DrawResizeNearestNeighbor output image](32-DrawResizeNearestNeighbor.png)
+
+### DrawResizeApproxBiLinear
+
+![DrawResizeApproxBiLinear output image](33-DrawResizeApproxBiLinear.png)
+
+### DrawResizeBiLinear
+
+![DrawResizeBiLinear output image](34-DrawResizeBiLinear.png)
+
+### DrawResizeCatmullRom
+
+![DrawResizeCatmullRom output image](35-DrawResizeCatmullRom.png)
+
 ### ImageMagickResize
 
-![ImageMagickResize output image](32-ImageMagickResize.png)
+![ImageMagickResize output image](36-ImageMagickResize.png)
 
 ### ImageMagickResizeWithDefine
 
-![ImageMagickResizeWithDefine output image](33-ImageMagickResizeWithDefine.png)
+![ImageMagickResizeWithDefine output image](37-ImageMagickResizeWithDefine.png)
 
