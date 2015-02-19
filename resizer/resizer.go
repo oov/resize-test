@@ -68,4 +68,8 @@ var Resizer = []ResizeFunc{
 	ImagingResizeHamming,
 	ImagingResizeWelch,
 	ImagingResizeCosine,
+	DrawResizeNearestNeighbor,
+	DrawResizeApproxBiLinear,
+	DrawResizeBiLinear,
+	DrawResizeCatmullRom,
 }
