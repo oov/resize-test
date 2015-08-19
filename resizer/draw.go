@@ -8,7 +8,7 @@ import (
 
 func drawResize(src image.Image, w int, h int, q draw.Interpolator) (image.Image, error) {
 	m := image.NewRGBA(image.Rect(0, 0, w, h))
-	draw.Scale(m, m.Bounds(), src, src.Bounds(), q)
+	q.Scale(m, m.Bounds(), src, src.Bounds(), draw.Over, nil)
 	return m, nil
 }
 
